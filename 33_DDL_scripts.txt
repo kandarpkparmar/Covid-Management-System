@@ -1,0 +1,147 @@
+create schema covid_management;
+
+set search_path to covid_management;
+
+CREATE TABLE user_details (
+u_id INT PRIMARY KEY,
+u_name VARCHAR(25) NOT NULL,
+u_gender VARCHAR(5) NOT NULL,
+u_age INT NOT NULL,
+u_address_line VARCHAR(30) NOT NULL,
+u_landmark VARCHAR(30),
+u_city VARCHAR(30) NOT NULL,
+u_state VARCHAR(30) NOT NULL,
+u_pincode INT NOT NULL,
+u_email VARCHAR(50)
+);
+
+CREATE TABLE u_phone (
+u_id INT,
+phone_no BIGINT NOT NULL,
+FOREIGN KEY (u_id) REFERENCES user_details(u_id)
+ON DELETE CASCADE ON UPDATE CASCADE
+);
+
+CREATE TABLE user_symptoms (
+u_id INT ,
+u_symptoms varchar(100),
+u_history varchar(100),
+u_allergy varchar(100),
+Foreign key (u_id) references user_details(u_id) on delete cascade on update cascade
+);
+
+CREATE TABLE lab_info (
+l_id INT PRIMARY KEY,
+l_name VARCHAR(25) NOT NULL,
+l_address_line VARCHAR(30) NOT NULL,
+l_landmark VARCHAR(30),
+l_city VARCHAR(30) NOT NULL,
+l_state VARCHAR(30) NOT NULL,
+l_pincode INT NOT NULL,
+l_phone BIGINT NOT NULL,
+l_time_from TIME,
+l_time_to TIME,
+l_email VARCHAR(50) NOT NULL,
+l_cost DECIMAL(7,3) NOT NULL
+);
+
+CREATE TABLE lab_details (
+l_id INT ,
+l_technician varchar(50) Not null,
+l_doctor varchar(50) not null,
+l_receptionist varchar(50) not null,
+Foreign key (l_id) references lab_info(l_id) on delete cascade on update cascade
+);
+
+CREATE TABLE l_testing (
+u_id INT,
+l_id int,
+l_report varchar(20) Not null,
+s_time time not null,
+s_date date not null,
+pay_status varchar(20) not null,
+Foreign key (l_id) references lab_info(l_id) on delete cascade on update cascade,
+Foreign key (u_id) references user_details(u_id) on delete cascade on update cascade
+);
+
+CREATE TABLE hos_info (
+h_id INT PRIMARY KEY,
+h_name VARCHAR(25) NOT NULL,
+h_address_line VARCHAR(30) NOT NULL,
+h_landmark VARCHAR(30),
+h_city VARCHAR(30) NOT NULL,
+h_state VARCHAR(30) NOT NULL,
+h_pincode INT NOT NULL,
+h_phone BIGINT NOT NULL,
+h_time_from TIME,
+h_time_to TIME,
+h_email VARCHAR(50) NOT NULL,
+consulting_charge DECIMAL(7,3) NOT NULL,
+h_type VARCHAR(15) NOT NULL
+);
+
+CREATE TABLE patient_details (
+u_id INT,
+pt_status VARCHAR(30) NOT NULL,
+pt_medication varchar(100) Not null,
+pt_consult_date DATE not null,
+pt_admit_date date,
+pt_discharge_date DATE,
+pt_lung_infec DECIMAL(4,2),
+Foreign key (u_id) references user_details(u_id) on delete cascade on update cascade
+);
+
+CREATE TABLE doctor_details (
+doc_id INT PRIMARY KEY,
+h_id int,
+doc_name varchar(25) Not null,
+doc_degree varchar(50) not null,
+doc_email varchar(50) not null,
+doc_phone BIGINT not null,
+doc_address_line varchar(30) not null,
+doc_landmark varchar(30),
+doc_city varchar(30) not null,
+doc_state varchar(30) not null,
+doc_duty_type varchar(20) not null,
+Foreign key (h_id) references hos_info(h_id) on delete cascade on update cascade
+);
+
+CREATE TABLE bed_details (
+h_id int,
+gen_count int Not null,
+gen_cost decimal(7,3) not null,
+spec_count int not null,
+spec_cost decimal(7,3) not null,
+icu_count int Not null,
+icu_cost decimal(8,3) not null,
+vent_count int Not null,
+vent_cost decimal(8,3) not null,
+Foreign key (h_id) references hos_info(h_id) on delete cascade on update cascade
+);
+
+CREATE TABLE imaging_center (
+h_id int,
+xray_avail BOOLEAN Not null,
+ctscan_avail BOOLEAN not null,
+xray_cost decimal(7,3) not null,
+ctscan_cost decimal(7,3) not null,
+Foreign key (h_id) references hos_info(h_id) on delete cascade on update cascade
+);
+
+CREATE TABLE staff_details (
+h_id int,
+n_name varchar(25) not null,
+med_off_name varchar(25) not null,
+Foreign key (h_id) references hos_info(h_id) on delete cascade on update cascade
+);
+
+CREATE TABLE payment_details (
+u_id int,
+h_id int,
+total_cost Decimal(10, 3) not null,
+u_pay_status varchar(15) not null,
+trans_id BIGINT PRIMARY KEY,
+trans_date DATE not null,
+Foreign key (h_id) references hos_info(h_id) on delete cascade on update cascade,
+Foreign key (u_id) references user_details(u_id) on delete cascade on update cascade
+);

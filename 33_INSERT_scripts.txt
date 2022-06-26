@@ -1,0 +1,107 @@
+INSERT INTO user_details (u_id,u_name,u_gender,u_age,u_address_line,u_landmark,u_city,u_state,u_pincode,u_email)
+VALUES (1,'Nishant','M',25,'Satyam Flats,Naroda','Galaxy Cinema','Ahmedabad','Gujarat',382330,'nisk01@gmail.com'),
+(2,'Vidhi','F',21,'166, Sector 27','Anandnagar','Gandhinagar','Gujarat',382028,'vidhi09@gmail.com'),
+(3,'Dhairya','M',33,'Flora Appartments, Navrangpura','Near Police Station','Ahmedabad','Gujarat',382335,'dl11@gmail.com'),
+(4,'Kandarp','M',40,'27/B Akota','','Vadodara','Gujarat',382122,'kp102@gmail.com'),
+(5,'Bhumi','F',43,'Shivam Plots, Gulbai Tekra','Post Office','Ahmedabad','Gujarat',382340,'bhumii67@gmail.com');
+
+INSERT INTO u_phone(u_id,phone_no)
+VALUES (1,9658742310),
+(1,9106822019),
+(2,7846201365),
+(3,9648751203),
+(4,7845120036),
+(5,9632012478);
+
+INSERT INTO user_symptoms (u_id,u_symptoms,u_history,u_allergy)
+VALUES (1,'Coughing,Headache','Diabetes',''),
+(2,'Fever,SoreThroat','',''),
+(3,'Coughing,Fever','','ibuprofen antibiotic'),
+(4,'Headache,Chest Pain','BP',''),
+(5,'Chest Pain,SoreThroat','Cholesterol','');
+
+Insert into lab_info(l_id, l_name, l_address_line, l_landmark, l_city, l_state, l_pincode, l_phone, l_time_from, l_time_to, l_email, l_cost)
+values (101, 'Freberg', 'Bhagabhai ni vadi', 'Civil', 'Ahmedabad', 'Gujarat', 382310, 9876545678, '08:00:00', '21:00:00', 'freberg@gmail.com', 2000 );
+Insert into lab_info(l_id, l_name, l_address_line, l_landmark, l_city, l_state, l_pincode, l_phone, l_time_from, l_time_to, l_email, l_cost)
+values (103, 'Neuberg','vijaybhai ni vadi', 'Gosai land', 'Udaipur', 'Rajasthan', '376514', '8765432107', '09:00:00', '20:00:00', 'neuberg@gmail.com', '1000' );
+Insert into lab_info(l_id, l_name, l_address_line, l_landmark, l_city, l_state, l_pincode, l_phone, l_time_from, l_time_to, l_email, l_cost)
+values (102, 'Supratech', 'Bhaveshbhai ni vadi', 'Navrangpura', 'Ahmedabad', 'Gujarat', '382350', '9876543210', '09:00:00', '20:00:00', 'supratech@gmail.com', '1500' );
+Insert into lab_info(l_id, l_name, l_address_line, l_landmark, l_city, l_state, l_pincode, l_phone, l_time_from, l_time_to, l_email, l_cost)
+values (104, 'Greencross', 'Kavi nanalal marg', 'Ravjinagar', 'Ahmedabad', 'Gujarat', '382360', '9876543213', '07:00:00', '22:00:00', 'greencross@gmail.com', '2000' );
+Insert into lab_info(l_id, l_name, l_address_line, l_landmark, l_city, l_state, l_pincode, l_phone, l_time_from, l_time_to, l_email, l_cost)
+values (105, 'Sarkari Lab', 'Nobal nagar society', 'Naroda', 'Ahmedabad', 'Gujarat', '382330', '9876576543', '10:00:00', '17:00:00', 'sarkarilab@gmail.com', '500' );
+
+INSERT INTO patient_details (u_id,pt_status,pt_medication,pt_consult_date,pt_admit_date,pt_discharge_date,pt_lung_infec)
+VALUES 
+(1,'Home Quarantine','steroids,favipiravir','01-08-2021',NULL,NULL,16),
+(3,'Admitted','ivermectin,steroids','2021-07-27','2021-08-01','2021-08-15',55),
+(4,'Admitted','favipiravir,steroids','2021-03-12','2021-03-15','2021-03-29',57),
+(5,'Admitted','Remdesivir,favipiravir','2021-05-25','2021-05-27','2021-06-10',50);
+
+Insert into hos_info(h_id, h_name, h_address_line, h_landmark, h_city, h_state, h_pincode, h_phone, h_time_from, h_time_to, h_email, consulting_charge, h_type)
+values (1001, 'AIIMS', '116/A LalBahadur marg', 'Vidhansabha', 'Ahmedabad', 'Gujarat', '382330', '9876789878', '00:00:00', '24:00:00', 'AIIMS@gmail.com', '2000' , 'Private');
+Insert into hos_info(h_id, h_name, h_address_line, h_landmark, h_city, h_state, h_pincode, h_phone, h_time_from, h_time_to, h_email, consulting_charge, h_type)
+values (1003, 'Nishant Hospital', '132/B Apex', 'Gulbai Tekra', 'Ahmedabad', 'Gujarat', '382340', '789669027', '00:00:00', '24:00:00', 'nishos@gmail.com', '1500' , 'Private');
+Insert into hos_info(h_id, h_name, h_address_line, h_landmark, h_city, h_state, h_pincode, h_phone, h_time_from, h_time_to, h_email, consulting_charge, h_type)
+values (1002, 'Civil', '116/A Chakabhai no road', 'Judges Bungla' ,'Udaipur', 'Rajasthan', '376514', '8765432104', '08:00:00', '20:00:00', 'civil@gmail.com', '1200', 'Government');
+Insert into hos_info(h_id, h_name, h_address_line, h_landmark, h_city, h_state, h_pincode, h_phone, h_time_from, h_time_to, h_email, consulting_charge, h_type)
+values (1004, 'Zydus', 'S.G.Highway', 'Satellite' ,'Ahmedabad', 'Gujarat', '376515', '78452309631', '07:00:00', '24:00:00', 'zydus01@gmail.com', '1400', 'Private');
+Insert into hos_info(h_id, h_name, h_address_line, h_landmark, h_city, h_state, h_pincode, h_phone, h_time_from, h_time_to, h_email, consulting_charge, h_type)
+values (1005, 'Sal Hospital', '120 Naranpura', 'Near Police Station' ,'Ahmedabad', 'Gujarat', '376590', '9874520013', '08:00:00', '20:00:00', 'sal01@gmail.com', '2000', 'Private');
+
+Insert into staff_details(h_id, n_name, med_off_name)
+values (1001, 'Archana Singh', 'Dr. John Simons');
+Insert into staff_details(h_id, n_name, med_off_name)
+values (1002, 'Pritha Thakkar', 'Dr. Prakash Javdekar');
+Insert into staff_details(h_id, n_name, med_off_name)
+values (1003, 'Vidhi Shah', 'Dr. Dhaval Boriwala');
+Insert into staff_details(h_id, n_name, med_off_name)
+values (1004, 'Dhruti Soneji', 'Dr. Suresh Patel');
+Insert into staff_details(h_id, n_name, med_off_name)
+values (1005, 'Vaishali Patel', 'Dr. Gyanendra Singh');
+
+Insert into lab_details(l_id, l_technician, l_doctor, l_receptionist)
+values (101,'Manav Desai','Dr. Ravi Shastri','Swati Parmar'),
+(102,'Priya Singh','Dr. Aditi Jaiswal','Sameer Gandhi'),
+(103,'Abhishek Jha','Dr. Jainam Shah','Riya Patel'),
+(104, 'Jenil Doshi', 'Dr. Vikas Sharma', 'Jhanvi Boriwala'),
+(105, 'Vishal Vasoya', 'Dr. Kashish Kothari', 'Nidhi Sadhwani'); 
+
+
+Insert into l_testing(u_id,l_id,l_report,s_time,s_date,pay_status)
+values (1,102,'Positive','12:01:00','2021-07-29','Received'),
+(2,103,'Negative','10:10:03','2021-09-04','Received'),
+ (5,101,'Positive','11:15:18','2021-05-22','Pending'),
+(3, 104, 'Positive','15:50:45', '2021-07-25', 'Received'),
+(4, 105, 'Positive', '14:38:45', '2021-05-24', 'Pending');
+
+Insert into doctor_details(doc_id, h_id, doc_name, doc_degree,doc_email,doc_phone,doc_address_line,doc_landmark,doc_city,doc_state,doc_duty_type)
+values (301, 1001, 'Dr. Faizal Daruwala', 'MS Ortho', 'faizal@gmail.com', 6543223456, '112/B Anandnagar', 'hemant store', 'Ahmedabad', 'Gujarat', 'Covid Duty');
+Insert into doctor_details(doc_id, h_id, doc_name, doc_degree,doc_email,doc_phone,doc_address_line,doc_landmark,doc_city,doc_state,doc_duty_type)
+values (302, 1002,'Dr. K.L.Kain', 'MS Physician', 'klkain12@gmail.com', 7460315602,'03/C Shantipura', 'Near DMart', 'Ahmedabad', 'Gujarat', 'Counsulting');
+Insert into doctor_details(doc_id, h_id, doc_name, doc_degree,doc_email,doc_phone,doc_address_line,doc_landmark,doc_city,doc_state,doc_duty_type)
+values (303, 1003,'Dr.R.K.Mehta', 'MS Physician', 'rrs2@gmail.com', 9874560303,'19/A Sindhubhavan Road', 'Near Ashok Vatika', 'Ahmedabad', 'Gujarat', 'Covid Duty');
+Insert into doctor_details(doc_id, h_id, doc_name, doc_degree,doc_email,doc_phone,doc_address_line,doc_landmark,doc_city,doc_state,doc_duty_type)
+values (304, 1004,'Dr.Sameer Shah', 'MS Physician', 'fgh2@gmail.com', 9856936320,'199 CG Road', 'Near Vartika Park', 'Ahmedabad', 'Gujarat', 'Covid Duty');
+Insert into doctor_details(doc_id, h_id, doc_name, doc_degree,doc_email,doc_phone,doc_address_line,doc_landmark,doc_city,doc_state,doc_duty_type)
+values (305, 1005,'Dr.Mihir Mehta', 'MS Ortho', 'tyu2@gmail.com', 7458992036,'260 ambavadi', 'New school road', 'Ahmedabad', 'Gujarat', 'Covid Duty');
+
+INSERT INTO bed_details(h_id,gen_count,gen_cost,spec_count,spec_cost,icu_count,icu_cost,vent_count,vent_cost)
+VALUES (1001,5,'500',3,'1000',1,'1500',2,'2000'),
+(1002,3,'300',2,'600',1,'900',3,'1200'),
+(1003,5,'1000',4,'2000',5,'3500',1,'5000'),
+(1004,6,'2000',5,'4000',3,'6000',1,'9000'),
+(1005,4,'1500',10,'2700',5,'4000',4,'7000');
+
+INSERT INTO imaging_center(h_id,xray_avail,ctscan_avail,xray_cost,ctscan_cost)
+VALUES (1002,'TRUE','TRUE','500','6000'),
+(1001,'TRUE','FALSE','700','00'),
+(1003,'TRUE','TRUE','1000','6000'),
+(1004,'TRUE', 'FALSE', '800', '00'),
+(1005, 'FALSE', 'FALSE', '00', '00');
+
+
+INSERT INTO payment_details(u_id,h_id,total_cost,u_pay_status,trans_id,trans_date)
+VALUES (3,1002,'24567.67','Credit Card',1456203985632,'2021-08-15'),
+(4,1001,'34523.56','Debit Card',1025889402113,'2021-03-29'),
+(5,1003,'40000','Cash',7485966958320,'2021-06-10');
